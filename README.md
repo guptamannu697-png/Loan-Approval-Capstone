@@ -213,4 +213,4 @@ The model achieved 84.5% accuracy and provided meaningful business insights for 
 Manu Gupta
 Aspiring Data Analyst | Power BI | SQL | Machine Learning
 
-✅ View Full Project Files (GitHub Repo): https://github.com/guptamannu697-png/Loan-Approval–Capstone
+✅ View Full Project Files (GitHub Repo): https://github.com/guptamannu697-png/Loan-Approval-Capstone
