@@ -40,20 +40,11 @@ SUM(CASE WHEN LoanAmount IS NULL THEN 1 ELSE 0 END) AS Null_LoanAmount,
 SUM(CASE WHEN Credit_History IS NULL THEN 1 ELSE 0 END) AS Null_CreditHistory
 FROM vw_loan_clean;
 
-Python Data Processing
+## 🔹 2. Python Data Processing
 
-Objective
+# Objective
 
-Load dataset, explore data and prepare for modeling
-import pandas as pd
-
-train = pd.read_csv("train.csv")
-test = pd.read_csv("test.csv")
-
-print(train.shape)
-print(test.shape)
-
-train.head()
+# Load dataset, explore data and prepare for modeling
 
 import pandas as pd
 
@@ -85,7 +76,18 @@ print(test.shape)
 
 train.head()
 
-Target Distribution
+import pandas as pd
+
+train = pd.read_csv("train.csv")
+test = pd.read_csv("test.csv")
+
+print(train.shape)
+print(test.shape)
+
+train.head()
+
+## Target Distribution
+
 train['Loan_Status'].value_counts()
 train['Loan_Status'].value_counts(normalize=True)
 
@@ -94,9 +96,10 @@ Output:
 	•	Rejected (N): 192
 	•	Approval Rate: 68.7%
 
-Machine Learning Model (Logistic Regression)
+**Machine Learning Model (Logistic Regression)**
 
-Train Test Split
+ *Train Test Split*
+
 from sklearn.model_selection import train_test_split
 
 X_train, X_val, y_train, y_val = train_test_split(
@@ -106,7 +109,8 @@ X_train, X_val, y_train, y_val = train_test_split(
     stratify=y
 )
 
-Model Pipeline
+*Model Pipeline*
+
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
@@ -118,7 +122,7 @@ pipe = Pipeline([
 
 pipe.fit(X_train, y_train)
 
-Model Evaluation
+*Model Evaluation*
 
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
@@ -128,15 +132,15 @@ print("Accuracy:", accuracy_score(y_val, y_pred))
 print(confusion_matrix(y_val, y_pred))
 print(classification_report(y_val, y_pred))
 
-Output Results
+*Output Results*
 
-Accuracy: 0.8455
+*Accuracy: 0.8455*
 
-Confusion Matrix:
+*Confusion Matrix:*
 [[20 18]
  [ 1 84]]
 
-Classification Report:
+*Classification Report:*
 Class
 Precision
 Recall
@@ -150,13 +154,13 @@ F1 Score
 0.99
 0.90
 
-4. Power BI Dashboard
+**4. Power BI Dashboard**
 
-Dashboard Name:
+*Dashboard Name:*
 
-Loan Approval Analytics Dashboard
+*Loan Approval Analytics Dashboard*
 
-Key KPIs:
+*Key KPIs:*
 	•	Total Applications → 614
 	•	Approved Loans → 422
 	•	Rejected Loans → 192
@@ -187,7 +191,7 @@ Filters Used:
 
 ⸻
 
-🔹 6. Tools & Technologies Used
+**🔹 6. Tools & Technologies Used**
 	•	SQL Server
 	•	Python (Pandas, Scikit-learn)
 	•	Power BI
@@ -196,7 +200,7 @@ Filters Used:
 
 ⸻
 
-🔹 7. Conclusion
+**🔹 7. Conclusion**
 
 This project successfully demonstrates a complete Data Analytics + Machine Learning pipeline from raw data cleaning to business insights dashboard.
 
